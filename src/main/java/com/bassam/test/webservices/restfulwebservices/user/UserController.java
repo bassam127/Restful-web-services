@@ -27,7 +27,7 @@ public class UserController {
 	public User getUserById(@PathVariable int id) {
 		User user = userDaoservice.findUserById(id);
 		if(user == null) {
-			throw new UserNotFoundException(""+id);
+			throw new UserNotFoundException("can not found user with id "+id);
 		}
 		return user;
 	}
